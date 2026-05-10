@@ -1,0 +1,134 @@
+1. 1D Data Visualization
+Perfect Graph Type
+
+Histogram
+
+Setup
+Area	Field
+Columns	Sepal Length Cm (bin)
+Rows	CNT(Iris.csv)
+Marks	Bar/Automatic
+Additional Steps
+Create Bin
+
+Right click:
+
+Sepal Length Cm
+
+Then:
+
+Create → Bins
+
+2. 2D Data Visualization
+Perfect Graph Type
+
+Scatter Plot
+
+Area	Field
+Columns	Sepal Length Cm
+Rows	Petal Length Cm
+Color	Species
+Detail	Id
+Marks	Circle
+IMPORTANT
+
+Go to:
+
+Analysis → Uncheck Aggregate Measures
+
+OR add:
+
+Id → Detail
+
+3. 3D Data Visualization
+Perfect Graph Type
+
+Bubble Chart
+Area	Field
+Columns	Petal Width Cm
+Rows	Petal Length Cm
+Size	Sepal Length Cm
+Color	Species
+Detail	Id
+Marks	Circle
+Purpose
+
+Simulates 3D using:
+
+X-axis
+Y-axis
+Bubble size
+
+4. Temporal Data Visualization
+Perfect Graph Type
+
+Line Chart
+
+Area	Field
+Columns ID
+Rows	Petal Length Cm
+Color	Species
+Detail	Id
+Marks	Line
+IMPORTANT
+
+Right click:
+
+ObservationID
+
+Then:
+
+Compute Using → Table Down
+Purpose
+
+Shows trend or sequential change.
+
+5. Multidimensional Data Visualization
+Perfect Graph Type
+
+Heat Map
+Setup
+Area	Field
+Columns	Sepal Length Cm
+Rows	Species
+Color	Petal Length Cm
+Size	Petal Width Cm
+Marks	Square
+
+6. Tree / Hierarchical Data Visualization
+Perfect Graph Type
+
+Treemap
+
+Setup
+Area	Field
+Label	Species
+Color	Species
+Size	CNT(Iris.csv)
+
+Steps
+
+Click:
+
+Show Me → Treemap
+
+7. Network Data Visualization
+Perfect Graph Type
+
+Scatter Relationship Graph
+Area	Field
+Columns	Sepal Length Cm
+Rows	Petal Width Cm
+Color	Species
+Shape	Species
+Detail	Id
+Marks	Shape
+
+Visualization Type	Best Graph
+1D	Histogram
+2D	Scatter Plot
+3D	Bubble Chart
+Temporal	Line Chart
+Multidimensional	Heat Map
+Tree/Hierarchical	Treemap
+Network	Scatter Relationship Graph

@@ -1,0 +1,186 @@
+start-dfs.sh
+
+start-yarn.sh
+
+jps
+
+
+mkdir LoginTimeProject
+
+cd LoginTimeProject
+
+nano log.txt
+user1,120
+user2,50
+user1,30
+user3,200
+user2,100
+user4,250
+user3,20
+
+
+
+nano LoginTimeAnalysis.java
+
+
+import java.io.IOException;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+public class LoginTimeAnalysis {
+
+    // Mapper Class
+    public static class TokenizerMapper
+            extends Mapper<Object, Text, Text, IntWritable> {
+
+        private Text user = new Text();
+        private IntWritable time = new IntWritable();
+
+        public void map(Object key, Text value, Context context)
+                throws IOException, InterruptedException {
+
+            String line = value.toString();
+
+            String[] parts = line.split(",");
+
+            if(parts.length == 2) {
+
+                user.set(parts[0]);
+
+                int loginTime = Integer.parseInt(parts[1]);
+
+                time.set(loginTime);
+
+                context.write(user, time);
+            }
+        }
+    }
+
+    // Reducer Class
+    public static class IntSumReducer
+            extends Reducer<Text, IntWritable, Text, IntWritable> {
+
+        private IntWritable result = new IntWritable();
+
+        public void reduce(Text key,
+                           Iterable<IntWritable> values,
+                           Context context)
+                throws IOException, InterruptedException {
+
+            int sum = 0;
+
+            for(IntWritable val : values) {
+                sum += val.get();
+            }
+
+            result.set(sum);
+
+            context.write(key, result);
+        }
+    }
+
+    // Main Method
+    public static void main(String[] args) throws Exception {
+
+        Configuration conf = new Configuration();
+
+        Job job = Job.getInstance(conf, "Login Time Analysis");
+
+        job.setJarByClass(LoginTimeAnalysis.class);
+
+        job.setMapperClass(TokenizerMapper.class);
+
+        job.setCombinerClass(IntSumReducer.class);
+
+        job.setReducerClass(IntSumReducer.class);
+
+        job.setOutputKeyClass(Text.class);
+
+        job.setOutputValueClass(IntWritable.class);
+
+        FileInputFormat.addInputPath(job, new Path(args[0]));
+
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+}
+
+
+export HADOOP_CLASSPATH=$(hadoop classpath)
+
+javac -classpath `hadoop classpath` -d . LoginTimeAnalysis.java
+
+jar -cvf logintime.jar *.class
+
+hdfs dfs -mkdir /input
+
+hdfs dfs -put log.txt /input
+
+hdfs dfs -ls /input
+
+echo $HADOOP_HOME
+
+
+
+nano /home/nikhil/hadoop/etc/hadoop/mapred-site.xml
+
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+<property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+</property>
+
+<property>
+    <name>yarn.app.mapreduce.am.env</name>
+    <value>HADOOP_MAPRED_HOME=/home/nikhil/hadoop</value>
+</property>
+
+<property>
+    <name>mapreduce.map.env</name>
+    <value>HADOOP_MAPRED_HOME=/home/nikhil/hadoop</value>
+</property>
+
+<property>
+    <name>mapreduce.reduce.env</name>
+    <value>HADOOP_MAPRED_HOME=/home/nikhil/hadoop</value>
+</property>
+
+</configuration>
+    
+
+
+nano /home/nikhil/hadoop/etc/hadoop/yarn-site.xml
+
+<configuration>
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+<property>
+    <name>yarn.nodemanager.env-whitelist</name>
+    <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+</property>
+</configuration>
+
+hdfs dfs -rm -r /output
+
+hadoop jar logintime.jar LoginTimeAnalysis /input /output
+
+hdfs dfs -cat /output/part-r-00000

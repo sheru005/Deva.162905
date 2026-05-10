@@ -1,0 +1,66 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Style
+sns.set_style('whitegrid')
+
+# Heatmap
+plt.figure(figsize=(12,8))
+numeric_df = df.select_dtypes(include=['int64', 'float64'])
+sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm')
+plt.title('Correlation Heatmap')
+plt.show()
+
+# Temperature Distribution
+plt.figure(figsize=(8,5))
+sns.histplot(df['temp'], bins=20, kde=True, color='orange')
+plt.title('Temperature Distribution')
+plt.show()
+
+# Burned Area Distribution
+plt.figure(figsize=(8,5))
+sns.histplot(df['area'], bins=30, kde=True, color='red')
+plt.title('Burned Area Distribution')
+plt.show()
+
+# Box Plot
+plt.figure(figsize=(8,5))
+sns.boxplot(x=df['temp'], color='skyblue')
+plt.title('Temperature Box Plot')
+plt.show()
+
+# Scatter Plot
+plt.figure(figsize=(8,5))
+sns.scatterplot(x='temp', y='area', data=df, color='green')
+plt.title('Temperature vs Burned Area')
+plt.show()
+
+# Month Count Plot
+plt.figure(figsize=(10,5))
+sns.countplot(x='month', data=df, palette='viridis')
+plt.title('Forest Fires by Month')
+plt.show()
+
+# Day Count Plot
+plt.figure(figsize=(10,5))
+sns.countplot(x='day', data=df, palette='Set2')
+plt.title('Forest Fires by Day')
+plt.show()
+
+# Pair Plot
+selected_columns = ['temp', 'RH', 'wind', 'rain', 'area']
+sns.pairplot(df[selected_columns])
+plt.show()
+
+# Line Plot
+plt.figure(figsize=(12,5))
+plt.plot(df['temp'], color='purple')
+plt.title('Temperature Variation')
+plt.show()
+
+# Bar Plot
+plt.figure(figsize=(10,5))
+sns.barplot(x='month', y='temp', data=df, palette='magma')
+plt.title('Average Temperature by Month')
+plt.show()

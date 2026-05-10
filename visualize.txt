@@ -1,0 +1,79 @@
+import pandas as pd 
+import seaborn as sns
+import matplotlib.pyplot as plt 
+
+df = pd.read_csv('forestfires.csv') 
+df
+
+#scatterplot
+plt.figure(figsize=(8,5))
+
+sns.scatterplot(x='temp', y='area', data=df)
+
+plt.title("Temperature vs Burned Area")
+plt.xlabel("Temperature")
+plt.ylabel("Burned Area")
+
+plt.show()
+
+#histogram
+plt.figure(figsize=(8,5))
+
+plt.hist(df['temp'], bins=15)
+
+plt.title("Temperature Distribution")
+plt.xlabel("Temperature")
+plt.ylabel("Frequency")
+
+plt.show()
+
+#bargraph
+plt.figure(figsize=(10,5))
+
+sns.barplot(x='month', y='wind', data=df)
+
+plt.title("Average Wind Speed by Month")
+
+plt.show()
+
+#boxplot
+plt.figure(figsize=(7,5))
+
+sns.boxplot(y='RH', data=df)
+
+plt.title("Boxplot of Relative Humidity")
+
+plt.show()
+
+#heatmap
+plt.figure(figsize=(10,8))
+
+corr = df.corr(numeric_only=True)
+
+sns.heatmap(corr, annot=True)
+
+plt.title("Correlation Heatmap")
+
+plt.show()
+
+#line chart
+plt.figure(figsize=(10,5))
+
+plt.plot(df['temp'])
+
+plt.title("Temperature Variation")
+plt.xlabel("Index")
+plt.ylabel("Temperature")
+
+plt.show()
+
+#histogram
+plt.figure(figsize=(8,5))
+
+plt.hist(df['area'], bins=20)
+
+plt.title("Burned Area Distribution")
+plt.xlabel("Burned Area")
+plt.ylabel("Frequency")
+
+plt.show()
