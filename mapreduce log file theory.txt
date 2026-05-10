@@ -1,0 +1,61 @@
+Experiment Title
+
+Design a Distributed Application Using MapReduce (Java) to Process Log File on Hadoop
+
+Aim
+
+To process a system log file using Hadoop MapReduce and calculate total login time of users in pseudo distributed mode.
+
+Theory
+Hadoop
+
+Apache Hadoop is an open-source framework used for distributed storage and processing of Big Data.
+
+Main components:
+
+HDFS → Storage
+MapReduce → Processing
+YARN → Resource management
+HDFS
+
+HDFS (Hadoop Distributed File System) stores data across multiple machines.
+
+Components:
+
+NameNode → Manages metadata
+DataNode → Stores actual data
+MapReduce
+
+MapReduce is a programming model used to process large datasets.
+
+Mapper
+
+Reads input data and converts it into key-value pairs.
+
+Example:
+
+user1,120 → (user1,120)
+Reducer
+
+Processes Mapper output and calculates total login time.
+
+Example:
+
+user1 → 120 + 30 = 150
+Pseudo Distributed Mode
+
+In pseudo distributed mode, all Hadoop services run on a single machine but behave like a cluster.
+
+Input
+user1,120
+user2,50
+user1,30
+Output
+user1 150
+user2 150
+user3 220
+user4 250
+
+Result
+
+The MapReduce program was successfully executed using Hadoop pseudo distributed mode and total login time of users was calculated from the log file.

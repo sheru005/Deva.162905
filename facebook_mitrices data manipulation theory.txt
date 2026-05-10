@@ -1,0 +1,27 @@
+Experiment No. 2
+Data Manipulation Using Python on Facebook Metrics Dataset
+Aim
+
+To perform data manipulation operations on the Facebook Metrics dataset using Python and Pandas.
+
+Theory
+
+Data manipulation is the process of organizing, modifying, and analyzing data for better understanding and processing. In Python, the Pandas library is used for handling datasets efficiently using DataFrames.
+
+In this experiment, different operations are performed on the Facebook Metrics dataset such as:
+
+Creating Subsets: Selecting required columns from the dataset.
+Merging Data: Combining two dataframes using common columns.
+Sorting Data: Arranging data in ascending or descending order.
+Transposing Data: Converting rows into columns and columns into rows.
+Reshaping Data: Changing the structure of data using functions like melt() and pivot_table().
+
+These operations are important in Data Science, Machine Learning, and Data Analytics for preprocessing and analyzing data.
+
+Tools Used
+Python
+Pandas Library
+Jupyter Notebook
+Conclusion
+
+Thus, various data manipulation operations were successfully performed on the Facebook Metrics dataset using Python and Pandas.

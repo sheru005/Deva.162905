@@ -1,0 +1,105 @@
+Experiment: Data Visualization using Matplotlib and Seaborn on Forest Fire Dataset
+Aim
+
+To visualize the Forest Fire dataset using Python libraries such as Matplotlib and Seaborn by plotting different graphs for data analysis and interpretation.
+
+Theory
+
+Data Visualization is the graphical representation of data using charts, plots, and graphs. It helps in understanding patterns, trends, correlations, and distributions in the dataset. Visualization makes complex data easier to analyze and interpret.
+
+In this experiment, the Forest Fire dataset is visualized using Python libraries Matplotlib and Seaborn. These libraries provide various plotting functions to represent numerical and categorical data effectively.
+
+Matplotlib
+
+Matplotlib is a Python library used for creating static, animated, and interactive visualizations. It provides complete control over graph customization such as labels, titles, colors, and figure size.
+
+Features of Matplotlib:
+
+Simple plotting functions
+Supports multiple graph types
+Easy customization
+Widely used for scientific visualization
+Seaborn
+
+Seaborn is built on top of Matplotlib and is mainly used for statistical data visualization. It provides attractive themes and advanced plotting features with less code.
+
+Features of Seaborn:
+
+Attractive graph styles
+Statistical plotting
+Easy correlation visualization
+Works directly with Pandas DataFrames
+Forest Fire Dataset
+
+The Forest Fire dataset contains information related to forest fires such as:
+
+Temperature
+Relative Humidity (RH)
+Wind speed
+Rainfall
+Burned area
+Month and day information
+
+This dataset is used to analyze environmental conditions affecting forest fires.
+
+Graphs Used in the Experiment
+1. Scatter Plot
+
+Scatter plot shows the relationship between two numerical variables. It helps in identifying trends and correlations.
+
+Example:
+
+Temperature vs Burned Area
+2. Histogram
+
+Histogram represents the frequency distribution of numerical data. It helps in understanding data spread and distribution.
+
+Example:
+
+Temperature Distribution
+Burned Area Distribution
+3. Bar Plot
+
+Bar plot compares categorical data with numerical values.
+
+Example:
+
+Average Wind Speed by Month
+4. Box Plot
+
+Box plot displays minimum value, maximum value, median, quartiles, and outliers in the dataset.
+
+Example:
+
+Relative Humidity Analysis
+5. Heatmap
+
+Heatmap visually represents correlation between numerical attributes using colors.
+
+Positive correlation
+Negative correlation
+Strong and weak relationships
+6. Line Plot
+
+Line plot shows variation or trend of data over a sequence or index.
+
+Example:
+
+Temperature Variation
+Advantages of Data Visualization
+Easy understanding of data
+Detects trends and patterns
+Helps in decision making
+Identifies outliers
+Simplifies large datasets
+Improves data analysis
+Applications
+Weather analysis
+Business analytics
+Scientific research
+Machine learning
+Forest fire prediction
+Environmental monitoring
+Conclusion
+
+In this experiment, the Forest Fire dataset was successfully visualized using different plotting techniques provided by Matplotlib and Seaborn. Various graphs such as scatter plot, histogram, heatmap, box plot, bar graph, and line plot were used to analyze relationships, distributions, and trends in the dataset. Data visualization helps in better understanding and interpretation of data for effective analysis.

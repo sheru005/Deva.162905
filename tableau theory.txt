@@ -1,0 +1,100 @@
+Experiment: Data Visualization using Tableau on Iris Dataset
+Aim
+
+To visualize the Iris dataset using Tableau Desktop by creating different types of visualizations for data analysis and interpretation.
+
+Theory
+
+Data Visualization is the graphical representation of data using charts, graphs, and dashboards. It helps in understanding patterns, trends, correlations, and distributions in the dataset. Visualization makes complex data easier to analyze and interpret.
+
+In this experiment, the Iris dataset is visualized using Tableau. Tableau is a powerful Business Intelligence and visualization tool used to create interactive and attractive visualizations with minimal coding.
+
+Tableau
+
+Tableau is a data visualization software used for analyzing and presenting data in graphical form. It allows users to create dashboards, charts, and reports interactively.
+
+Features of Tableau
+Interactive dashboards
+Drag-and-drop interface
+Easy data analysis
+Supports multiple chart types
+Fast data visualization
+User-friendly environment
+Iris Dataset
+
+The Iris dataset contains information about three species of Iris flowers:
+
+Iris-setosa
+Iris-versicolor
+Iris-virginica
+
+The dataset includes the following attributes:
+
+Sepal Length
+Sepal Width
+Petal Length
+Petal Width
+Species
+
+This dataset is commonly used for data visualization and machine learning analysis.
+
+Visualizations Used in the Experiment
+1. 1D (Linear) Visualization
+
+1D visualization represents a single variable using graphs such as Histogram or Bar Chart.
+
+Example
+Distribution of Sepal Length
+2. 2D (Planar) Visualization
+
+2D visualization shows the relationship between two variables using Scatter Plots.
+
+Example
+Sepal Length vs Petal Length
+3. 3D (Volumetric) Visualization
+
+3D visualization represents three variables simultaneously using Bubble Charts where size or color acts as the third dimension.
+
+Example
+Sepal Length, Petal Length, and Petal Width
+4. Temporal Visualization
+
+Temporal visualization represents data changes over time using Line Charts.
+
+Example
+Trend of Sepal Length over generated dates
+5. Multidimensional Visualization
+
+Multidimensional visualization represents multiple variables together for comparative analysis.
+
+Example
+Heatmap of flower measurements
+6. Tree / Hierarchical Visualization
+
+Hierarchical visualization represents grouped data using Treemaps.
+
+Example
+Species-wise Petal Length comparison
+7. Network Visualization
+
+Network visualization represents relationships and connections among entities using node-link diagrams or Sankey diagrams.
+
+Example
+Relationship between species and flower characteristics
+Advantages of Data Visualization
+Easy understanding of data
+Detects trends and patterns
+Helps in decision making
+Identifies relationships among variables
+Simplifies large datasets
+Improves analytical understanding
+Applications
+Data analytics
+Business Intelligence
+Scientific research
+Machine learning
+Pattern recognition
+Educational analysis
+Conclusion
+
+In this experiment, the Iris dataset was successfully visualized using different visualization techniques available in Tableau. Various charts such as Histogram, Scatter Plot, Bubble Chart, Heatmap, Treemap, and Line Chart were used to analyze distributions, relationships, and patterns in the dataset. Data visualization helps in better understanding and effective analysis of data.
