@@ -124,6 +124,13 @@ Shape	Species
 Detail	Id
 Marks	Shape
 
+Network Diagram 
+
+Source - species
+target - measure values
+value - petal width
+details - id 
+
 Visualization Type	Best Graph
 1D	Histogram
 2D	Scatter Plot
